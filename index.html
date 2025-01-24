@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora DarTelecom</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div id="contenedor">
+      <div class="header">
+        <h1>Calculadora DarTelecom</h1>
+      </div>
+      <div class="contenedores">
+        <div class="contenedor-planes">
+          <h2>Planes de Internet</h2>
+          <p>Max Limit (K/M)</p>
+          <select id="plan-select-max" onchange="setMaxLimit()">
+            <option value="">Seleccione un plan</option>
+            <option value="5M">5M</option>
+            <option value="10M">10M</option>
+            <option value="15M">15M</option>
+            <option value="20M">20M</option>
+            <option value="25M">25M</option>
+            <option value="30M">30M</option>
+            <option value="40M">40M</option>
+            <option value="50M">50M</option>
+            <option value="100M">100M</option>
+            <option value="150M">150M</option>
+            <option value="200M">200M</option>
+            <option value="250M">250M</option>
+            <option value="300M">300M</option>
+            <option value="400M">400M</option>
+            <option value="500M">500M</option>
+          </select>
+
+          <p>Burst Limit (K/M)</p>
+          <select id="plan-select-burst" onchange="setburstLimit()">
+            <option value="">Seleccione un plan</option>
+            <option value="5M">5M</option>
+            <option value="10M">10M</option>
+            <option value="15M">15M</option>
+            <option value="20M">20M</option>
+            <option value="25M">25M</option>
+            <option value="30M">30M</option>
+            <option value="40M">40M</option>
+            <option value="50M">50M</option>
+            <option value="100M">100M</option>
+            <option value="150M">150M</option>
+            <option value="200M">200M</option>
+            <option value="250M">250M</option>
+            <option value="300M">300M</option>
+            <option value="400M">400M</option>
+            <option value="500M">500M</option>
+          </select>
+        </div>
+        <div class="contenedor-parametros">
+          <h2>Parametros Upload/Download</h2>
+          <p>Max Limit (K/M)</p>
+          <div class="input-container">
+            <label for="max-limit">Ingrese el límite máximo:</label>
+            <input type="text" id="max-limit" name="max-limit" />
+          </div>
+          <p>Burst Limit (K/M)</p>
+          <div class="input-container">
+            <label for="burst-limit">Ingrese el límite máximo:</label>
+            <input type="text" id="burst-limit" name="burst-limit" />
+          </div>
+        </div>
+        <div class="contenedor-resultados">
+          <h2>Resultados</h2>
+          <table class="tabla-resultados">
+            <thead>
+              <tr>
+                <th>Tabla General</th>
+                <th>Upload</th>
+                <th>Download</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Max Limit</td>
+                <td id="upload-max-limit"></td>
+                <td id="download-max-limit"></td>
+              </tr>
+              <tr>
+                <td>Burst Limit</td>
+                <td id="upload-burst-limit"></td>
+                <td id="download-burst-limit"></td>
+              </tr>
+              <tr>
+                <td>Burst Threshold</td>
+                <td id="upload-burst-threshold"></td>
+                <td id="download-burst-threshold"></td>
+              </tr>
+              <tr>
+                <td>Burst Time</td>
+                <td id="upload-burst-time"></td>
+                <td id="download-burst-time"></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="resultado-final">
+            <h3>Resultado Final</h3>
+            <textarea id="resultado-texto" readonly></textarea>
+            <button onclick="copiarTexto()">Copiar</button>
+          </div>
+          <div class="resultado-final-kb">
+            <h3>Resultado Final en KB por 1048</h3>
+            <textarea id="resultado-texto-kb" readonly></textarea>
+            <button onclick="copiarTextokb()">Copiar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
